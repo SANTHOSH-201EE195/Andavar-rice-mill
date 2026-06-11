@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { api } from '../lib/api';
+import { api, getImageUrl } from '../lib/api';
 import { formatPrice } from '../utils/formatters';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { handleAuthError } from '../utils/auth';
@@ -220,7 +220,7 @@ export default function Admin({ onNavigate }) {
                                         <div key={product.id} className="admin-product-card card slide-in">
                                             <div className="admin-product-image">
                                                 {product.imageUrl ? (
-                                                    <img src={product.imageUrl} alt={product.name} />
+                                                    <img src={getImageUrl(product.imageUrl)} alt={product.name} />
                                                 ) : (
                                                     <div className="image-placeholder">No Image</div>
                                                 )}
@@ -342,7 +342,7 @@ export default function Admin({ onNavigate }) {
                                 />
                                 {imagePreview && (
                                     <div className="image-preview">
-                                        <img src={imagePreview} alt="Preview" />
+                                        <img src={getImageUrl(imagePreview)} alt="Preview" />
                                     </div>
                                 )}
                             </div>

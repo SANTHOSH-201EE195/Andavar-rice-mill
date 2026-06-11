@@ -59,6 +59,16 @@ async function request(endpoint, options = {}) {
     }
 }
 
+/**
+ * Helper to build full image URLs from backend relative paths
+ */
+export const getImageUrl = (path) => {
+    if (!path) return '';
+    if (path.startsWith('http') || path.startsWith('data:')) return path;
+    const baseUrl = API_BASE_URL.replace('/api', '');
+    return `${baseUrl}${path}`;
+};
+
 // ==========================================
 // API CLIENT
 // ==========================================

@@ -59,7 +59,7 @@ public class AuthService {
         user.setEmail(request.getEmail());
         
         // Make the specific mobile number the admin
-        if ("9876543210".equals(request.getMobile())) {
+        if ("7010903976".equals(request.getMobile())) {
             user.setRole("ROLE_ADMIN");
         } else {
             user.setRole("ROLE_USER");

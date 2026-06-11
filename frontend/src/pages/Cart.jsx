@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { api } from '../lib/api';
+import { api, getImageUrl } from '../lib/api';
 import { formatPrice } from '../utils/formatters';
 import LoadingSpinner from '../components/LoadingSpinner';
 import './Cart.css';
@@ -97,7 +97,7 @@ export default function Cart({ onNavigate }) {
                                 <div key={item.id} className="cart-item card slide-in">
                                     <div className="cart-item-image">
                                         {item.product?.imageUrl ? (
-                                            <img src={item.product.imageUrl} alt={item.product.name} />
+                                            <img src={getImageUrl(item.product.imageUrl)} alt={item.product.name} />
                                         ) : (
                                             <div className="image-placeholder">No Image</div>
                                         )}

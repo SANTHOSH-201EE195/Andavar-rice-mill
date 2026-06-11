@@ -1,7 +1,7 @@
 import { Package, ShoppingBag, Trash2, Star } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { api } from '../lib/api';
+import { api, getImageUrl } from '../lib/api';
 import { formatPrice } from '../utils/formatters';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Hero from '../components/Hero';
@@ -232,7 +232,7 @@ export default function ProductList({ onNavigate }) {
                                     <div className="product-image-container">
                                         {product.imageUrl ? (
                                             <img
-                                                src={product.imageUrl}
+                                                src={getImageUrl(product.imageUrl)}
                                                 alt={product.name}
                                                 className="product-image"
                                             />

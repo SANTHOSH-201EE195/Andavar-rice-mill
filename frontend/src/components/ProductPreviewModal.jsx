@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, Star, Send, ShoppingCart, CheckCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import { api } from '../lib/api';
+import { api, getImageUrl } from '../lib/api';
 
 import { formatPrice, formatDate } from '../utils/formatters';
 import { handleAuthError } from '../utils/auth';
@@ -99,7 +99,7 @@ export default function ProductPreviewModal({ product, onClose, onAddToCart }) {
                     <div className="modal-image-col">
                         <div className="modal-image-wrapper">
                             {product.imageUrl ? (
-                                <img src={product.imageUrl} alt={product.name} />
+                                <img src={getImageUrl(product.imageUrl)} alt={product.name} />
                             ) : (
                                 <div className="placeholder">No Image</div>
                             )}
