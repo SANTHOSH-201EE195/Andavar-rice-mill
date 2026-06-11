@@ -2,26 +2,6 @@
   command = "npm run build"
   publish = "dist"
 
-# Proxy API requests to your Oracle Backend (Fixes Mixed Content)
-[[redirects]]
-  from = "/api/*"
-  to = "http://YOUR_ORACLE_IP:8080/api/:splat"
-  status = 200
-  force = true
-
-# Proxy Image requests to your Oracle Backend
-[[redirects]]
-  from = "/product-images/*"
-  to = "http://YOUR_ORACLE_IP:8080/product-images/:splat"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/images/*"
-  to = "http://YOUR_ORACLE_IP:8080/images/:splat"
-  status = 200
-  force = true
-
 # React Router SPA catch-all
 [[redirects]]
   from = "/*"
