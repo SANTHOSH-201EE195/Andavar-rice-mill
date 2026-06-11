@@ -1,0 +1,364 @@
+.about-us-section {
+    padding: 5rem 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Section Header (Centered) */
+.section-title-wrapper {
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title-wrapper .subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #EECD5E;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    color: #111a15;
+    margin: 0;
+    font-weight: 700;
+}
+
+.title-decoration {
+    width: 60px;
+    height: 3px;
+    background-color: #EECD5E;
+    margin: 1rem auto 0;
+}
+
+/* Image Collage */
+.about-images {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 1.5rem;
+}
+
+.img-box {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.img-box:hover img {
+    transform: scale(1.05);
+}
+
+.img-1 {
+    grid-column: 1;
+    grid-row: 1;
+    height: 100%;
+}
+
+.img-2 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    /* Tall image on right */
+    height: 100%;
+}
+
+.img-3 {
+    grid-column: 1;
+    grid-row: 2;
+    height: 100%;
+}
+
+/* Call Us Badge */
+.call-us-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 20%;
+    background-color: #EECD5E;
+    /* Gold */
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    min-width: 250px;
+}
+
+.phone-icon-circle {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    /* Dark Green */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.call-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.call-text .subtitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: none;
+    /* Override section subtitle */
+    letter-spacing: normal;
+    margin-bottom: 0;
+}
+
+.call-text .number {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* Right Content */
+.about-content {
+    padding-left: 2rem;
+}
+
+.kicker {
+    color: #558B2F;
+    /* Lighter Green */
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    color: #5a6c5d;
+    /* text-secondary but ensured hex */
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Feature List */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #5a6c5d;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #558B2F;
+}
+
+/* Signature Block */
+.signature-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ceo-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #EECD5E;
+}
+
+.profile-info h4 {
+    margin: 0;
+    font-size: 1.125rem;
+    color: var(--color-primary);
+}
+
+.profile-info .role {
+    font-size: 0.875rem;
+    color: #5a6c5d;
+}
+
+/* Rotating Badge */
+.circular-badge {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: #558B2F;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 20s linear infinite;
+}
+
+.badge-icon {
+    position: absolute;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0 1rem;
+        /* Add side padding */
+    }
+
+    .about-images {
+        width: 100%;
+        /* Ensure full width */
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .call-us-badge {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us-section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        /* Smaller for mobile */
+    }
+
+    .main-title {
+        font-size: 1.75rem;
+        /* Smaller for mobile */
+    }
+
+    .about-images {
+        grid-template-rows: 150px 150px;
+        gap: 1rem;
+    }
+
+    .call-us-badge {
+        position: relative;
+        left: 0;
+        transform: none;
+        bottom: 0;
+        margin-top: 2rem;
+        width: 100%;
+        min-width: auto;
+        /* Allow shrinking */
+        justify-content: center;
+        padding: 1.5rem;
+    }
+
+    .about-content {
+        padding-left: 0;
+        text-align: center;
+        padding: 0 1rem;
+        /* Ensure padding on sides */
+    }
+
+    .feature-list li {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .feature-list li::before {
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .signature-block {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.about-images {
+    animation: fadeScale 1s ease-out forwards;
+}
+
+.about-content {
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}

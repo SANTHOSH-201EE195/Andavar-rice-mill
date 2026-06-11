@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Golden Oil Drop -->
+  <path d="M256 0C256 0 64 256 64 352a192 192 0 1 0 384 0c0-96-192-352-192-352z" fill="#EECD5E"/>
+  <!-- Shine/Reflection for depth -->
+  <path d="M320 320c0-53-43-96-96-96" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" fill="none" opacity="0.4"/>
+</svg>
